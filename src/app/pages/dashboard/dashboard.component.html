@@ -1,0 +1,62 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+  <div class="header">
+    <h2>Dashboard</h2>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>ID Bookings</th>
+          <th>Name</th>
+          <th>Vehicle</th>
+          <th>Mechanic</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detail of bookingsSummary">
+          <td [ngClass]="getStatusLabelAndColor(detail.status_id).colorClass">
+            {{ getStatusLabelAndColor(detail.status_id).label }}
+          </td>
+          <td>{{ detail.idbookings }}</td>
+          <td>{{ detail.name }}</td>
+          <td>{{ getBookingDetail(detail.idbookings)?.vehicle || 'N/A' }}</td>
+          <td>{{ getMechanicIdForBooking(detail.idbookings) | getMechanicName: staffList }}</td>
+          <td>€ {{ detail.cost }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="no-booking-message" *ngIf="!bookingsDetails || bookingsDetails.length === 0">
+    <p>No booking details found.</p>
+  </div>
+
+  <div class="invoice-form">
+    <h3>Invoice / Bill</h3>
+    <form>
+      <label for="bookingId">Booking ID:</label>
+      <input type="number" id="bookingId" name="bookingId" [(ngModel)]="invoiceBookingId">
+      <div class="buttons">
+        <button type="button" class="create-invoice-button" (click)="printInvoice()">CREATE INVOICE</button>
+        <!--<button type="button" class="view-invoices-button" (click)="viewAllInvoices()">VIEW INVOICES</button> !-->
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+        <p *ngIf="successMessage">{{ successMessage }}</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="invoice-list">
+    <h3>View Invoices</h3>
+    <form>
+      <label for="searchBookingId">Booking ID:</label>
+      <input type="number" id="bookingId" name="bookingId" [(ngModel)]="searchBookingId">
+      <button type="button" class="view-invoices-button" (click)="viewInvoicesByBookingId()">VIEW INVOICES</button>
+      <p *ngIf="viewErrorMessage">{{ viewErrorMessage }}</p>
+    </form>
+    <!-- Lista de Faturas (Invoices) -->
+  </div>
+</div>

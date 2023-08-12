@@ -1,0 +1,34 @@
+<div class="register-container">
+  <h1>Register</h1>
+
+  <app-modal [title]="modalTitle" [message]="modalMessage" [showModal]="showModal"></app-modal>
+
+  <form class="register-form" (submit)="registerUser()">
+    <div class="input-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
+    </div>
+    <div class="input-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+    </div>
+    <div class="input-group">
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" [(ngModel)]="user.phone" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+    </div>
+    <button type="submit">Register</button>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <h2>{{ modalTitle }}</h2>
+      <p>{{ modalMessage }}</p>
+      <button (click)="closeModal()">OK</button>
+    </div>
+  </div>

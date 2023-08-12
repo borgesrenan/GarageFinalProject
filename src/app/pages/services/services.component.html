@@ -1,0 +1,110 @@
+<!-- services.component.html -->
+<div class="services-container">
+    <div class="service-card">
+        <h2>Annual Service</h2>
+        <div class="label-container">
+            <div class="price-label">PRICES FROM:</div>
+          </div>
+        <div class="price-container">
+            <div class="price-euro">€</div>
+            <div class="price-value">100</div>
+        </div>
+        <div class="details-container">
+            <button class="details-button" (click)="toggleDetails('annual')">What's Included</button>
+            <ul *ngIf="showDetails.annual">
+                <li>Change engine oil and oil filter</li>
+                <li>Inspect and top up all fluid levels (brake fluid, coolant, power steering fluid, etc.)</li>
+                <li>Check and replace air filter if necessary</li>
+                <li>Check and replace spark plugs if needed</li>
+                <li>Inspect and rotate tires</li>
+                <li>Test and recharge car battery</li>
+                <li>Check and adjust tire pressure</li>
+                <li>Inspect brakes and brake pads</li>
+                <li>Test headlights, taillights, and indicators</li>
+                <li>Lubricate door hinges and locks</li>
+            </ul>
+            <button class="book-now-button" (click)="navigateToBookings('annual')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <h2>Major Service</h2>
+        <div class="label-container">
+            <div class="price-label">PRICES FROM:</div>
+          </div>
+        <div class="price-container">
+            <div class="price-euro">€</div>
+            <div class="price-value">150</div>
+        </div>
+        <div class="details-container">
+            <button class="details-button" (click)="toggleDetails('major')">What's Included</button>
+            <ul *ngIf="showDetails.major">
+                <li>All items included in the Annual Service</li>
+                <li>Replace fuel filter</li>
+                <li>Replace cabin air filter</li>
+                <li>Inspect and replace drive belts if required</li>
+                <li>Check and adjust timing belt (if applicable)</li>
+                <li>Inspect and clean throttle body</li>
+                <li>Test and inspect the suspension system</li>
+                <li>Check and service the cooling system</li>
+                <li>Inspect exhaust system for leaks or damage</li>
+                <li>Check and adjust wheel alignment</li>
+            </ul>
+            <button class="book-now-button" (click)="navigateToBookings('major')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <h2>Repair / Fault</h2>
+        <div class="label-container">
+            <div class="price-label">PRICES FROM:</div>
+          </div>
+        <div class="price-container">
+            <div class="price-euro">€</div>
+            <div class="price-value">200</div>
+        </div>
+        <div class="details-container">
+            <button class="details-button" (click)="toggleDetails('repair')">What's Included</button>
+            <ul *ngIf="showDetails.repair">
+                <li>Diagnose and fix engine misfires</li>
+                <li>Identify and repair electrical system faults</li>
+                <li>Fix issues with the car's charging system</li>
+                <li>Repair or replace faulty ignition system components</li>
+                <li>Fix problems with the car's heating and air conditioning</li>
+                <li>Repair exhaust system leaks or damage</li>
+                <li>Replace malfunctioning sensors (e.g., oxygen sensor, mass airflow sensor)</li>
+                <li>Repair or replace damaged belts and pulleys</li>
+                <li>Fix transmission or gearbox issues</li>
+                <li>Address brake system problems (e.g., spongy brakes, brake noise)</li>
+            </ul>
+            <button class="book-now-button" (click)="navigateToBookings('repair')">Book Now</button>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <h2>Major Repair</h2>
+        <div class="label-container">
+            <div class="price-label">PRICES FROM:</div>
+          </div>
+        <div class="price-container">
+            <div class="price-euro">€</div>
+            <div class="price-value">300</div>
+        </div>
+        <div class="details-container">
+            <button class="details-button" (click)="toggleDetails('majorRepair')">What's Included</button>
+            <ul *ngIf="showDetails.majorRepair">
+                <li>All items included in the Repair / Fault service</li>
+                <li>Engine overhaul or replacement</li>
+                <li>Transmission overhaul or replacement</li>
+                <li>Suspension system repair or replacement</li>
+                <li>Complete brake system overhaul</li>
+                <li>Repair or replace damaged or rusted body panels</li>
+                <li>Fix issues with the car's electrical wiring</li>
+                <li>Address major exhaust system issues</li>
+                <li>Repair or replace damaged steering components</li>
+                <li>Comprehensive diagnostic and repair of complex issues</li>
+            </ul>
+            <button class="book-now-button" (click)="navigateToBookings('majorRepair')">Book Now</button>
+        </div>
+    </div>
+</div>

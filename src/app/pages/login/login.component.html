@@ -1,0 +1,28 @@
+<!-- login.component.html -->
+<div class="login-container">
+  <!-- Se estiver logado, mostra a mensagem de boas-vindas e o botão de logout -->
+  <div *ngIf="loginService.isLoggedIn; else loginForm">
+    <div class="welcome-message">
+      <h1>Welcome, USER!</h1>
+      <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <!-- Se não estiver logado, mostra o formulário de login -->
+  <ng-template #loginForm>
+    <form class="login-form" (ngSubmit)="login(emailInput.value, passwordInput.value)">
+      <div class="input-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" #emailInput required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" #passwordInput required>
+      </div>
+
+      <button type="submit" style="margin: 0 auto;">Enter</button>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+  </ng-template>
+</div>

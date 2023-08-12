@@ -1,0 +1,175 @@
+/* dashboard.component.css */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header,
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.invoice-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.invoice-form {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.invoice-form h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.invoice-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.invoice-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.invoice-form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.invoice-form .buttons {
+  margin-top: 10px;
+  align-self: center;
+}
+
+.invoice-form button {
+  margin-right: 10px;
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.invoice-form button:hover {
+  background-color: #258cd1;
+}
+
+.invoice-list {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.invoice-list h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.invoice-list form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.invoice-list label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.invoice-list input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.invoice-list .view-invoices-button {
+  align-self: center;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.invoice-list .view-invoices-button:hover {
+  background-color: #258cd1;
+}
+
+p {
+  color: red;
+}
+
+.status-label {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+.blue-label {
+  color: blue;
+}
+
+.yellow-label {
+  color: #dbba04;
+}
+
+.green-label {
+  color: green;
+}
+
+.purple-label {
+  color: purple;
+}
+
+.red-label {
+  color: red;
+}
